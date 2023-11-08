@@ -3,65 +3,83 @@ body{
 }
 
 .pokemon-list{
-  width:min-content;
-
   display: grid;
   grid-template-columns: repeat(5,1fr);
   grid-template-rows: repeat(5,1fr);
   grid-gap: 10px;
   gap: 2px;
-
   min-height: 200px;
   max-height: 400px;
-
   overflow-y: scroll;
 }
 
 .pokemon-icon{
   width:50px;
   height: 50px;
-  border-radius: 100%;
-  border-right: 2px white solid;
-  border-left: 2px red solid;
-  border-top: 2px red solid;
-  border-bottom: 2px white solid;
   padding: 5px;
+}
+
+.pokemon-icon-big{
+  width:100px;
+  height:133px;
 }
 
 .icon-div{
   width: min-content;
   margin: 0 auto;
 }
+.icon-div-flipped{
+  width: max-content;
+  margin:0 auto;
+}
 
 .pokemon-card{
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   padding: 10px 0px;
   background-color: rgba(128, 128, 128, 0.644);
   letter-spacing: 0px;
+  transition: transform 1s ease-in-out;
+  transform: skewY(0deg);
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.pokemon-card:active{
+  transform: skewY(180deg);
 }
 
 .card-buttons{
   display: flex;
   margin: auto;
   width: min-content;
-  border: 1px dotted red;
 }
 
 .main-container{
   display:flex;
-  justify-content: space-between;
-}
-
-.main-container > div{
-  display:flex;
-  justify-content: space-between;
-  margin: 50px 100px;
-  border:1px dotted red;
+  flex-direction: row;
 }
 
 .my-list{
   background-color: red;
 }
+
+
+
+
+
+
+
+
+/*
+  ____________________________________________________________________________________________
+
+  PokeballBorder
+  border-radius: 100%;
+  border-right: 2px white solid;
+  border-left: 2px red solid;
+  border-top: 2px red solid;
+  border-bottom: 2px white solid;
+   */

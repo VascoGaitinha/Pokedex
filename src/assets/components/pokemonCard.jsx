@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "../../App.css"
-const Image = (props) => {
+const PokemonCard = (props) => {
     const [pokemon,setPokemon] = useState({})
     const [loading,setLoading] = useState(true)
-
-    let source = "";
+    const [mouseOn,setMouseOn] = useState(false)
 
     useEffect(()=>{
 
@@ -18,12 +17,26 @@ const Image = (props) => {
         .catch((error) => console.log(error))
     },[])
     
+    const handleMouseEnter = () =>{
+        console.log("MouseOn")
+        setMouseOn(true)
+
+    }
+
+    const handleMouseLeave = () =>{
+        console.log("MouseOff")
+        setMouseOn(false)
+    }
+    
     
 
     return(
-        <div className="pokemon-card">
+        <div 
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
+        
         {loading && <p>[!]</p>}
-        {!loading && (<div>
+        {!loading && !mouseOn &&  (<div className="pokemon-card">
             <div className="icon-div">
                 <img className="pokemon-icon" src={pokemon.sprites.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
             </div>
@@ -33,8 +46,15 @@ const Image = (props) => {
                 <button>Info</button>
             </div>
             </div>)}
+
+
+            {!loading && mouseOn &&  (<div>
+            <div className="icon-div-flipped">
+                <img className="pokemon-icon-big" src={pokemon.sprites.other.dream_world.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
+            </div>
+            </div>)}
         </div>
     )
 }
 
-export default Image
+export default PokemonCard
