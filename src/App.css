@@ -35,11 +35,9 @@
   padding: 10px 0px;
   background-color: rgba(128, 128, 128, 1);
   letter-spacing: 0px;
-  transition: transform 1s ease-in, border-radius 1s ease-in;
-  transform: skewY(1deg);
   font-size: 0.7em;
   text-align: center;
-  border-radius: 10%;
+  border-radius: 5%;
 }
 
 .card-buttons{
@@ -59,6 +57,7 @@
 .my-list{
   background-color: red;
   height: 400px;
+  width:500px;
 }
 
 

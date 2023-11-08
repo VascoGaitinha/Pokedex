@@ -5,7 +5,7 @@ const PokemonCard = (props) => {
     const [pokemon,setPokemon] = useState({})
     const [loading,setLoading] = useState(true)
     const [hover, setHover] = useState(false);
-    const {url, mouseOn, setMouseOn} = props;
+    const {url, mouseOn, setMouseOn, pokemonToList, setPokemonToList} = props;
 
     useEffect(()=>{
         axios.get(url)
@@ -20,6 +20,7 @@ const PokemonCard = (props) => {
         console.log("MouseOn")
         setMouseOn(true)
         setHover(true)
+        setPokemonToList(pokemon)
 
     }
 

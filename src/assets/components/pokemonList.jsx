@@ -6,7 +6,7 @@ import SearchBar from "./searchBar"
 let PokemonList = (props) =>{
     const [allCards, setAllCards] = useState({})
     const [loading, setLoading] = useState(true)
-    const {mouseOn, setMouseOn} = props;
+    const {mouseOn, setMouseOn, pokemon, setPokemon} = props;
     const Pokedex_URL = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150"
 
     useEffect (()=>{
@@ -25,7 +25,13 @@ let PokemonList = (props) =>{
         {!loading && 
             allCards.map((card, index) =>{
             return(
-                    <PokemonCard key={index} url={card.url} mouseOn={mouseOn} setMouseOn={setMouseOn} />
+                    <PokemonCard 
+                    key={index} url={card.url} 
+                    mouseOn={mouseOn} 
+                    setMouseOn={setMouseOn}
+                    pokemonToList={pokemon}
+                    setPokemonToList={setPokemon} 
+                    />
             )
         })
         }
