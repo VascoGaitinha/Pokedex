@@ -1,6 +1,3 @@
-body{
-  width: min-content;
-}
 
 .pokemon-list{
   display: grid;
@@ -25,12 +22,9 @@ body{
 }
 
 .icon-div{
-  width: min-content;
+  width: 100px;
   margin: 0 auto;
-}
-.icon-div-flipped{
-  width: max-content;
-  margin:0 auto;
+  background-color: rgba(128, 128, 128, 1);
 }
 
 .pokemon-card{
@@ -39,16 +33,13 @@ body{
   flex-direction: column;
   justify-content: center;
   padding: 10px 0px;
-  background-color: rgba(128, 128, 128, 0.644);
+  background-color: rgba(128, 128, 128, 1);
   letter-spacing: 0px;
-  transition: transform 1s ease-in-out;
-  transform: skewY(0deg);
+  transition: transform 1s ease-in, border-radius 1s ease-in;
+  transform: skewY(1deg);
   font-size: 0.7em;
   text-align: center;
-}
-
-.pokemon-card:active{
-  transform: skewY(180deg);
+  border-radius: 10%;
 }
 
 .card-buttons{
@@ -58,12 +49,16 @@ body{
 }
 
 .main-container{
+  margin: 10% auto;
+  width:min-content;
+  border:10px solid pink;
   display:flex;
   flex-direction: row;
 }
 
 .my-list{
   background-color: red;
+  height: 400px;
 }
 
 

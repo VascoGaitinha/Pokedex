@@ -4,11 +4,10 @@ import "../../App.css"
 const PokemonCard = (props) => {
     const [pokemon,setPokemon] = useState({})
     const [loading,setLoading] = useState(true)
-    const [mouseOn,setMouseOn] = useState(false)
+    const [hover, setHover] = useState(false);
+    const {url, mouseOn, setMouseOn} = props;
 
     useEffect(()=>{
-
-        const {url} = props;
         axios.get(url)
         .then((response)=>{
             setPokemon(response.data)
@@ -20,23 +19,24 @@ const PokemonCard = (props) => {
     const handleMouseEnter = () =>{
         console.log("MouseOn")
         setMouseOn(true)
+        setHover(true)
 
     }
 
     const handleMouseLeave = () =>{
         console.log("MouseOff")
         setMouseOn(false)
+        setHover(false)
     }
-    
     
 
     return(
         <div 
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
-        
+        onMouseLeave={handleMouseLeave}
+        >
         {loading && <p>[!]</p>}
-        {!loading && !mouseOn &&  (<div className="pokemon-card">
+        {!loading && !hover &&  (<div className="pokemon-card">
             <div className="icon-div">
                 <img className="pokemon-icon" src={pokemon.sprites.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
             </div>
@@ -47,12 +47,14 @@ const PokemonCard = (props) => {
             </div>
             </div>)}
 
-
-            {!loading && mouseOn &&  (<div>
-            <div className="icon-div-flipped">
-                <img className="pokemon-icon-big" src={pokemon.sprites.other.dream_world.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
-            </div>
-            </div>)}
+            {loading && hover &&(
+                <div className="icon-div">
+                    <p>Loading!</p>
+                </div>)}
+            {!loading && hover &&(
+                <div className="icon-div">
+                    <img className="pokemon-icon-big" src={pokemon.sprites.other.dream_world.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
+                </div>)}
         </div>
     )
 }

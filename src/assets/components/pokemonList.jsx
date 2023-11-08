@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import PokemonCard from "./pokemonCard"
+import SearchBar from "./searchBar"
 
-let PokemonList = () =>{
+let PokemonList = (props) =>{
     const [allCards, setAllCards] = useState({})
     const [loading, setLoading] = useState(true)
+    const {mouseOn, setMouseOn} = props;
     const Pokedex_URL = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150"
 
     useEffect (()=>{
@@ -16,15 +18,18 @@ let PokemonList = () =>{
     },[])
 
     return(
+        <div className="right-side">
+        <SearchBar />
         <div className="pokemon-list">
         {loading && <h2>Loading</h2>}
         {!loading && 
             allCards.map((card, index) =>{
             return(
-                    <PokemonCard key={index} url={card.url} image="big"/>
+                    <PokemonCard key={index} url={card.url} mouseOn={mouseOn} setMouseOn={setMouseOn} />
             )
         })
         }
+        </div>
         </div>
     )
 }
