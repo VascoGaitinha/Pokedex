@@ -1,18 +1,40 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 let PokeDex = (props) =>{
     const{mouseOn, setMouseOn,pokemon} = props;
-
+    const [myPokedex, setMyPokedex] = useState({})
+    const [loading,setLoading] = useState(true)
+    const myList = "http://localhost:5005/pokemons"
+ 
+    useEffect(()=>{
+        axios.get(myList)
+        .then((response)=>{
+            setMyPokedex(response.data)
+            setLoading(false)
+            console.log(myPokedex)
+        })
+    },[])
 
     return(
-       <>
-            {!mouseOn && (
+       <>   
+            {!mouseOn && loading &&(
                 <div className="my-list">
-                    <h1>Pokemon</h1>
-                    <h1>Pokemon</h1>
-                    <h1>Pokemon</h1>
-                    <h1>Pokemon</h1>
-                    <h1>Pokemon</h1>
-                    <h1>Pokemon</h1>
-                 </div>
+                    {<h1>
+                        Loading your PokeList ...
+                    </h1>
+                    }
+                </div>
+            )}
+            {!mouseOn && !loading &&(
+                <div className="my-list">
+                    {myPokedex.map((pokemon, )=> {
+                        return( 
+                            <div key={pokemon.id}>
+                                {pokemon.species.name}
+                            </div>)
+                    })}
+                </div>
             )}
             {mouseOn &&(
                 <div className="pokemon-preview">

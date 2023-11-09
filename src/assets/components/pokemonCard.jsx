@@ -6,6 +6,8 @@ const PokemonCard = (props) => {
     const [loading,setLoading] = useState(true)
     const [hover, setHover] = useState(false);
     const {url, mouseOn, setMouseOn, pokemonToList, setPokemonToList} = props;
+    const myPokedex_URL = "http://localhost:5005/pokemons"
+    
 
     useEffect(()=>{
         axios.get(url)
@@ -28,6 +30,27 @@ const PokemonCard = (props) => {
         console.log("MouseOff")
         setMouseOn(false)
         setHover(false)
+    }
+
+    const addFav = () => {
+        const data = pokemon
+        axios.post(myPokedex_URL, pokemon)
+        .then(response => {console.log (response.data)})
+        .catch(error => {
+            // Handle error
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.error('Server responded with an error:', error.response.data);
+                console.error('Status code:', error.response.status);
+            } else if (error.request) {
+                // The request was made but no response was received
+                console.error('No response received from server:', error.request);
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                console.error('Error setting up the request:', error.message);
+            }
+        })
     }
     
 
@@ -52,7 +75,10 @@ const PokemonCard = (props) => {
             {!loading && hover &&(
                 <div className="icon-div">
                     <img className="pokemon-icon-big" src={pokemon.sprites.other.dream_world.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
-                   <div><button>ADD</button></div>
+                   <div>
+                        <button>ADD</button>
+                        <button onClick={addFav}>FAV</button>
+                   </div>
                 </div>)}
         </div>
     )

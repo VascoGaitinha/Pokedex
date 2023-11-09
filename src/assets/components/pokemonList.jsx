@@ -3,6 +3,7 @@ import axios from "axios"
 import PokemonCard from "./pokemonCard"
 import SearchBar from "./searchBar"
 
+
 let PokemonList = (props) =>{
     const [allCards, setAllCards] = useState({})
     const [loading, setLoading] = useState(true)
