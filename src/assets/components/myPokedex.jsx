@@ -15,9 +15,16 @@ let PokeDex = (props) =>{
                  </div>
             )}
             {mouseOn &&(
-                <div className="my-list">
+                <div className="pokemon-preview">
                     <h1>{pokemon.name.toUpperCase()}</h1>
-                    <img className="pokemon-icon-big" src={pokemon.sprites.other.dream_world.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
+                    <div className="pokemon-details">
+                        <img className="pokemon-icon-preview" src={pokemon.sprites.other.dream_world.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
+                        <div className="pokemon-details-text">
+                           <p>ID:{pokemon.id} </p>
+                           <p>Outro</p>
+                           <p>Outro</p>
+                        </div>
+                    </div>
                 </div>
 
             )}

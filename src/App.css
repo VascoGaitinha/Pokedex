@@ -20,6 +20,13 @@
   height:131px;
 }
 
+.pokemon-icon-preview{
+  width:200px;
+  height:300px;
+  padding: 0 100px; 
+}
+
+
 .icon-div{
   width: 100px;
   margin: 0 auto;
@@ -55,12 +62,31 @@
   
 }
 
-.my-list{
+.my-list{ /* LEFT SIDE HOVER FALSE*/
   background-color: red;
   height: 400px;
   width:500px;
   margin-top:21px;
 }
+
+.pokemon-preview{ /* LEFT SIDE HOVER TRUE*/
+  background-color: red;
+  height: 400px;
+  width:500px;
+  margin-top:21px;
+}
+
+.pokemon-details{
+  display: flex;
+  background-color: orangered;
+}
+
+.pokemon-details-text{
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+}
+
 
 
 
