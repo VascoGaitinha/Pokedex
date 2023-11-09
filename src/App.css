@@ -1,8 +1,7 @@
-
 .pokemon-list{
   display: grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-rows: repeat(5,1fr);
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
   grid-gap: 10px;
   gap: 2px;
   min-height: 200px;
@@ -11,20 +10,21 @@
 }
 
 .pokemon-icon{
-  width:50px;
-  height: 50px;
-  padding: 5px;
+  width:100px;
+  height: 100px;
 }
 
 .pokemon-icon-big{
-  width:100px;
-  height:133px;
+  width:80px;
+  padding: 0 10px;
+  height:131px;
 }
 
 .icon-div{
   width: 100px;
   margin: 0 auto;
   background-color: rgba(128, 128, 128, 1);
+  border-radius: 5%;
 }
 
 .pokemon-card{
@@ -47,17 +47,19 @@
 }
 
 .main-container{
-  margin: 10% auto;
-  width:min-content;
+  margin: 5% auto;
+  width:90%;
   border:10px solid pink;
   display:flex;
   flex-direction: row;
+  
 }
 
 .my-list{
   background-color: red;
   height: 400px;
   width:500px;
+  margin-top:21px;
 }
 
 

@@ -37,16 +37,13 @@ const PokemonCard = (props) => {
         onMouseLeave={handleMouseLeave}
         >
         {loading && <p>[!]</p>}
-        {!loading && !hover &&  (<div className="pokemon-card">
+        {!loading && !hover &&  (
+        <div className="pokemon-card">
             <div className="icon-div">
                 <img className="pokemon-icon" src={pokemon.sprites.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
             </div>
             <p>{pokemon.name.toUpperCase()}</p>
-            <div className="card-buttons">
-                <button>Add</button>
-                <button>Info</button>
-            </div>
-            </div>)}
+        </div>)}
 
             {loading && hover &&(
                 <div className="icon-div">
@@ -55,6 +52,7 @@ const PokemonCard = (props) => {
             {!loading && hover &&(
                 <div className="icon-div">
                     <img className="pokemon-icon-big" src={pokemon.sprites.other.dream_world.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
+                   <div><button>ADD</button></div>
                 </div>)}
         </div>
     )
