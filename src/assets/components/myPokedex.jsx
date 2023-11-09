@@ -12,16 +12,14 @@ let PokeDex = (props) =>{
         .then((response)=>{
             setMyPokedex(response.data)
             setLoading(false)
-            console.log(myPokedex)
         })
     },[])
-
     return(
        <>   
             {!mouseOn && loading &&(
                 <div className="my-list">
                     {<h1>
-                        Loading your PokeList ...
+                        Loading your PokeList .
                     </h1>
                     }
                 </div>
@@ -42,9 +40,9 @@ let PokeDex = (props) =>{
                     <div className="pokemon-details">
                         <img className="pokemon-icon-preview" src={pokemon.sprites.other.dream_world.front_default.slice(pokemon.sprites.front_default.lastIndexOf("https://"))}/>
                         <div className="pokemon-details-text">
-                           <p>ID:{pokemon.id} </p>
-                           <p>Outro</p>
-                           <p>Outro</p>
+                           <p>ID: {pokemon.id} </p>
+                           <p>Type: {pokemon.types[0].type.name}</p>
+                           <p>Weight: {pokemon.weight}lbs</p>
                         </div>
                     </div>
                 </div>

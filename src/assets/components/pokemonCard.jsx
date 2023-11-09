@@ -33,7 +33,6 @@ const PokemonCard = (props) => {
     }
 
     const addFav = () => {
-        const data = pokemon
         axios.post(myPokedex_URL, pokemon)
         .then(response => {console.log (response.data)})
         .catch(error => {
