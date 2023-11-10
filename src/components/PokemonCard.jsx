@@ -27,10 +27,15 @@ let PokemonCard = (props) =>{
     return( // Rendering a pokemon card with info from all pokemons on allPokemonList
         <div>
             {thisPokemonLoading && <h1>Loading</h1>}
-            {!thisPokemonLoading && <div><img src={thisPokemon.sprites.front_default}></img></div>}
+            {!thisPokemonLoading && 
             <div>
-            {thisPokemon.name.toUpperCase()}
-            </div>
+                <div>
+                    <img src={thisPokemon.sprites.front_default}></img>
+                </div>
+                <div>
+                    <h2>{thisPokemon.name.toUpperCase()}</h2>
+                </div>
+            </div>}
             <button onClick={clickAdd}>+</button>
         </div>
     )

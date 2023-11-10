@@ -56,15 +56,24 @@ let LeftSide = (props) =>{
         {myPokemonList.map((pokemon, index)=>{
             return(
                 <div key={index}>
-                    <p id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</p>
-                    <input 
-                    id={`rename-${pokemon.name}`}
-                    style={{display :"none"}}
-                    onChange={(e) => setRename(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && clickRename(pokemon.id, pokemon)}
-                    className="left-pokemon-name-input" type="text" placeholder={pokemon.name}></input>
-                    <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
-                    <button onClick={() => showInput(pokemon.name)}>R</button>
+                    <div>
+                        <h2 id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</h2>
+                        <input 
+                        id={`rename-${pokemon.name}`}
+                        style={{display :"none"}}
+                        onChange={(e) => setRename(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && clickRename(pokemon.id, pokemon)}
+                        className="left-pokemon-name-input" type="text" placeholder={pokemon.name}>
+
+                        </input>
+                    </div>
+                    <div>
+                       <img src={pokemon.sprites.front_default}></img>
+                    </div>
+                    <div>
+                        <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
+                        <button onClick={() => showInput(pokemon.name)}>R</button>
+                    </div>
                 </div> 
                 )
         })} 
