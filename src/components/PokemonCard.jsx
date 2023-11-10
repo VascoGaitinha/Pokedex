@@ -18,11 +18,7 @@ let PokemonCard = (props) =>{
     const clickAdd = () =>{
         axios.post(Json_Url, thisPokemon)
         setUpdate(!update)
-        console.log(update)
-
     }
-
-    !thisPokemonLoading && console.log(thisPokemon.sprites.front_default);
 
     return( // Rendering a pokemon card with info from all pokemons on allPokemonList
         <div>

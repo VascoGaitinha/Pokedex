@@ -7,6 +7,8 @@ let LeftSide = (props) =>{
     const[myListLoading, setmyListLoading] = useState(true)
     const[rename, setRename] = useState("")
 
+    const gifAddress = "sprites.versions.generation-v.black-white.animated.front_default"
+
     useEffect(()=>{
         axios.get(Json_Url)
         .then((response) => {
@@ -32,8 +34,6 @@ let LeftSide = (props) =>{
         .then(setUpdate(!update))
         let input = document.getElementById(`rename-${pokemon.name}`)
         let pokemonName = document.getElementById(`left-pokemon-name-${pokemon.name}`)
-        console.log(input)
-        console.log(pokemonName)
         input.style.display ="none"
         pokemonName.style.display ="block"
     }
@@ -41,8 +41,6 @@ let LeftSide = (props) =>{
     const showInput = (name) => {
         let input = document.getElementById(`rename-${name}`)
         let pokemonName = document.getElementById(`left-pokemon-name-${name}`)
-        console.log(input)
-        console.log(pokemonName)
         input.style.display ="block"
         pokemonName.style.display ="none"
     }
@@ -51,33 +49,33 @@ let LeftSide = (props) =>{
         <div>
         {myListLoading && <h1>.:Loading:.</h1>}
         {!myListLoading &&
-        <div>
-        <h1>Left Side</h1>
-        {myPokemonList.map((pokemon, index)=>{
-            return(
-                <div key={index}>
-                    <div>
-                        <h2 id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</h2>
-                        <input 
-                        id={`rename-${pokemon.name}`}
-                        style={{display :"none"}}
-                        onChange={(e) => setRename(e.target.value)}
-                        onKeyDown={(e) => e.key === 'Enter' && clickRename(pokemon.id, pokemon)}
-                        className="left-pokemon-name-input" type="text" placeholder={pokemon.name}>
+            <div>
+            <h1>Left Side</h1>
+            {myPokemonList.map((pokemon, index)=>{
+                return(
+                    <div key={index}>
+                        <div>
+                            <h2 id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</h2>
+                            <input 
+                            id={`rename-${pokemon.name}`}
+                            style={{display :"none"}}
+                            onChange={(e) => setRename(e.target.value)}
+                            onKeyDown={(e) => e.key === 'Enter' && clickRename(pokemon.id, pokemon)}
+                            className="left-pokemon-name-input" type="text" placeholder={pokemon.name}>
 
-                        </input>
-                    </div>
-                    <div>
-                       <img src={pokemon.sprites.front_default}></img>
-                    </div>
-                    <div>
-                        <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
-                        <button onClick={() => showInput(pokemon.name)}>R</button>
-                    </div>
-                </div> 
-                )
-        })} 
-        </div>}
+                            </input>
+                        </div>
+                        <div>
+                            <img src={pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default}/>
+                        </div>
+                        <div>
+                            <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
+                            <button onClick={() => showInput(pokemon.name)}>R</button>
+                        </div>
+                    </div> 
+                    )
+            })} 
+            </div>}
         </div>
     )
 }

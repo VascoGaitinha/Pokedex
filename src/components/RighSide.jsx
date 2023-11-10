@@ -1,5 +1,4 @@
-import axios from "axios";
-import PokemonCard from "./PokemonCard";
+import PokemonCard from "./pokemonCard";
 
 let RightSide = (props) =>{
 
