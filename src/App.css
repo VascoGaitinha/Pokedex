@@ -1,117 +1,51 @@
-.pokemon-list{
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-rows: repeat(5,1fr);
-  grid-gap: 10px;
-  gap: 2px;
-  min-height: 200px;
-  max-height: 400px;
-  overflow-y: scroll;
-}
-
-.pokemon-icon{
-  width:100px;
-  height: 100px;
-}
-
-.pokemon-icon-big{
-  width: 100px;
-  padding: 0 10px;
-  min-height: 142px;
-  max-height:162px;
-}
-
-.pokemon-icon-preview{
-  width:200px;
-  height:300px;
-}
-
-
-.icon-div{
-  display: flex;
-  justify-content: center;
-  width: 175px;
+#root {
+  max-width: 1280px;
   margin: 0 auto;
-  background-color: rgba(128, 128, 128, 1);
-  border-radius: 5%;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-}
-
-.pokemon-card{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px 0px;
-  background-color: rgba(128, 128, 128, 1);
-  letter-spacing: 0px;
-  font-size: 0.7em;
+  padding: 2rem;
   text-align: center;
-  border-radius: 5%;
 }
 
-.card-buttons{
-  display: flex;
-  margin: auto;
-  width: min-content;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
 
 .main-container{
-  margin: 5% auto;
-  width:90%;
-  display:flex;
+  display: flex;
   flex-direction: row;
-  justify-content: space-around;
-
 }
 
-.right-side{
-  width: 60%;
-}
-
-.my-list{ /* LEFT SIDE HOVER FALSE*/
-  background-color: red;
-  height: 400px;
-  width: 30%;
-  margin-top:21px;
-}
-
-.pokemon-preview{ /* LEFT SIDE HOVER TRUE*/
-  background-color: red;
-  height: 400px;
-  width: 30%;
-  margin-top:21px;
-}
-
-.pokemon-details{
-  display: flex;
-  background-color: orangered;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.pokemon-details-text{
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  background-color: orange;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  font-size: 20px;
-}
-
-button {
-  margin-bottom: 20px;
-}
-
-h1{
-  text-align: center;
+.left-pokemon-name-input{
+  display:none;
 }
