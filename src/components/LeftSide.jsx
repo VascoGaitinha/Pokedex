@@ -7,8 +7,6 @@ let LeftSide = (props) =>{
     const[myListLoading, setmyListLoading] = useState(true)
     const[rename, setRename] = useState("")
 
-    const[idToDelete, setIdToDelete] = useState()
-
     useEffect(()=>{
         axios.get(Json_Url)
         .then((response) => {

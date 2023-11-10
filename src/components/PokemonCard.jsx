@@ -7,6 +7,8 @@ let PokemonCard = (props) =>{
     const [thisPokemon, setThisPokemon] = useState({})
     const [thisPokemonLoading, setThisPokemonLoading] = useState(true)
 
+    const pokemonName=thisPokemon.name.slice(0,1).toUpperCase()+thisPokemon.name.slice(1)
+
     useEffect(()=>{
         axios.get(url)
         .then((response)=>{
@@ -29,7 +31,7 @@ let PokemonCard = (props) =>{
             {thisPokemonLoading && <h1>Loading</h1>}
             {!thisPokemonLoading && <div><img src={thisPokemon.sprites.front_default}></img></div>}
             <div>
-            {thisPokemon.name}
+            {pokemonName}
             </div>
             <button onClick={clickAdd}>+</button>
         </div>
