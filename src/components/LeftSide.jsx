@@ -56,7 +56,7 @@ let LeftSide = (props) =>{
         {myPokemonList.map((pokemon, index)=>{
             return(
                 <div key={index}>
-                    <p id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name}</p>
+                    <p id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</p>
                     <input 
                     id={`rename-${pokemon.name}`}
                     style={{display :"none"}}
