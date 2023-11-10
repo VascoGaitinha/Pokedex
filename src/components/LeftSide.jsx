@@ -25,16 +25,29 @@ let LeftSide = (props) =>{
         axios.delete(`${Json_Url}/${i}`)
         .then(setUpdate(!update))
         .catch((error)=>console.log("ERRROR!!",error))
-
     }
+
     const clickRename = (id, pokemon) =>{
         let newPokemon = {...pokemon}
         newPokemon.name = rename
         axios.put(`${Json_Url}/${id}`, newPokemon)
         .then(setUpdate(!update))
+        let input = document.getElementById(`rename-${pokemon.name}`)
+        let pokemonName = document.getElementById(`left-pokemon-name-${pokemon.name}`)
+        console.log(input)
+        console.log(pokemonName)
+        input.style.display ="none"
+        pokemonName.style.display ="block"
     }
 
-
+    const showInput = (name) => {
+        let input = document.getElementById(`rename-${name}`)
+        let pokemonName = document.getElementById(`left-pokemon-name-${name}`)
+        console.log(input)
+        console.log(pokemonName)
+        input.style.display ="block"
+        pokemonName.style.display ="none"
+    }
 
       return(
         <div>
@@ -45,20 +58,20 @@ let LeftSide = (props) =>{
         {myPokemonList.map((pokemon, index)=>{
             return(
                 <div key={index}>
-                    <p className="left-pokemon-name">{pokemon.name}</p>
+                    <p id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name}</p>
                     <input 
+                    id={`rename-${pokemon.name}`}
+                    style={{display :"none"}}
                     onChange={(e) => setRename(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && clickRename(pokemon.id, pokemon)}
                     className="left-pokemon-name-input" type="text" placeholder={pokemon.name}></input>
-                    <p>{pokemon.id}</p>
                     <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
+                    <button onClick={() => showInput(pokemon.name)}>R</button>
                 </div> 
                 )
         })} 
-
         </div>}
         </div>
-
     )
 }
 
