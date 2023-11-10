@@ -5,6 +5,7 @@ let LeftSide = (props) =>{
     const {myPokemonList, setMyPokemonList,Json_Url,update, setUpdate} = props;
    
     const[myListLoading, setmyListLoading] = useState(true)
+    const[rename, setRename] = useState("")
 
     const[idToDelete, setIdToDelete] = useState()
 
@@ -20,18 +21,17 @@ let LeftSide = (props) =>{
 
     },[update])
 
-   
-
-
     const clickRemove = (i) => {
         axios.delete(`${Json_Url}/${i}`)
         .then(setUpdate(!update))
         .catch((error)=>console.log("ERRROR!!",error))
 
     }
-    const clickRename = () =>{
-        let name = document.getElementsByName
-        
+    const clickRename = (id, pokemon) =>{
+        let newPokemon = {...pokemon}
+        newPokemon.name = rename
+        axios.put(`${Json_Url}/${id}`, newPokemon)
+        .then(setUpdate(!update))
     }
 
 
@@ -44,14 +44,16 @@ let LeftSide = (props) =>{
         <h1>Left Side</h1>
         {myPokemonList.map((pokemon, index)=>{
             return(
-                    <div key={index}>
+                <div key={index}>
                     <p className="left-pokemon-name">{pokemon.name}</p>
-                    <input className="left-pokemon-name-input" type="text" placeholder={pokemon.name}></input>
+                    <input 
+                    onChange={(e) => setRename(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && clickRename(pokemon.id, pokemon)}
+                    className="left-pokemon-name-input" type="text" placeholder={pokemon.name}></input>
                     <p>{pokemon.id}</p>
                     <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
-                    <button onClick={ ()=> clickRename(pokemon.name)}>R</button>
-                    </div>
-                    )
+                </div> 
+                )
         })} 
 
         </div>}
