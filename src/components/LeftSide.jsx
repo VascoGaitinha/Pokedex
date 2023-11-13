@@ -65,12 +65,14 @@ let LeftSide = (props) =>{
 
                             </input>
                         </div>
-                        <div>
-                            <img src={pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default}/>
-                        </div>
-                        <div>
-                            <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
-                            <button onClick={() => showInput(pokemon.name)}>R</button>
+                        <div className="left-image-and-buttons">
+                            <div>
+                                <img className="left-pokemon-item" src={pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default}/>
+                            </div>
+                            <div className="left-button-div">
+                                <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
+                                <button onClick={() => showInput(pokemon.name)}>R</button>
+                            </div>
                         </div>
                     </div> 
                     )

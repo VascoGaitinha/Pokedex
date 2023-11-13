@@ -21,7 +21,7 @@ let PokemonCard = (props) =>{
     }
 
     return( // Rendering a pokemon card with info from all pokemons on allPokemonList
-        <div>
+        <div className="pokemon-card">
             {thisPokemonLoading && <h1>Loading</h1>}
             {!thisPokemonLoading && 
             <div>
