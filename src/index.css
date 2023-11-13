@@ -4,7 +4,15 @@
 
 
 *{font-family: "VT323";
-letter-spacing: 2px;}
+letter-spacing: 2px;
+}
+
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+}
+
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
