@@ -10,7 +10,9 @@ function InfoPage(props) {
       {infoLoaded &&
       <div>
       <h1>Details</h1>
-      <img className='pokemon-details-image big-image' src={pokemonInfo.sprites.other.dream_world.front_default} alt="pkm img"/>
+      <div className='pokemon-details-image-div'>
+      <img className='pokemon-details-image' src={pokemonInfo.sprites.other.dream_world.front_default} alt="pkm img"/>
+      </div>
       <h2>Name: {pokemonInfo.name.toUpperCase()}</h2>
       <p>Type: {pokemonInfo.types[0].type.name.toUpperCase()}</p>
       <p>Nr:{pokemonInfo.id}</p>

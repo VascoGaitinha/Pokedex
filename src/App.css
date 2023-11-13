@@ -52,6 +52,13 @@
 .pokemon-details-image{
   max-width: 10rem;
   height: 15rem;
+    padding: 5%;
+}
+
+.pokemon-details-image-div{
+  background-color: rgba(245, 7, 7, 0.25);
+  border-radius: 50%;
+  
 }
 
 .left-container{
