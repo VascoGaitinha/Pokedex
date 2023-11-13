@@ -11,6 +11,7 @@ letter-spacing: 2px;
 .main-container{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 :root {
@@ -20,7 +21,11 @@ letter-spacing: 2px;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  background-image: url("../public/forest_background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

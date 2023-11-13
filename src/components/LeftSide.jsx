@@ -49,8 +49,10 @@ let LeftSide = (props) =>{
         <div>
         {myListLoading && <h1>.:Loading:.</h1>}
         {!myListLoading &&
-            <div>
-            <h1>Left Side</h1>
+        <>
+            <h1>Pokedex</h1>
+
+            <div className="pokemon-card-list-left">
             {myPokemonList.map((pokemon, index)=>{
                 return(
                     <div key={index}>
@@ -77,7 +79,8 @@ let LeftSide = (props) =>{
                     </div> 
                     )
             })} 
-            </div>}
+            </div>
+            </>}
         </div>
     )
 }

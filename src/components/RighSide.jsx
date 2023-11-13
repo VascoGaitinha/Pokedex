@@ -6,8 +6,8 @@ let RightSide = (props) =>{
 
     return(
         <div>
-        <h1>Right Side</h1>
-        <div className="pokemon-card-list">
+        <h1>Pokemon List</h1>
+        <div className="pokemon-card-list-right">
         {allPokemonList.map((pokemon,index)=>{ // Map All Pokemons in list and passing URL to PokemonCard
             return(
                 <PokemonCard 
