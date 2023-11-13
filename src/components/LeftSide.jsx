@@ -7,8 +7,6 @@ const LeftSide = (props) =>{
     const[myListLoading, setmyListLoading] = useState(true)
     const[rename, setRename] = useState("")
 
-    const gifAddress = "sprites.versions.generation-v.black-white.animated.front_default"
-
     useEffect(()=>{
         axios.get(Json_Url)
         .then((response) => {

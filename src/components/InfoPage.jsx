@@ -1,5 +1,4 @@
 import React from 'react'
-import "../Shadows.css"
 
 function InfoPage(props) {
   const {pokemonInfo,infoLoaded} = props;

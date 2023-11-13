@@ -7,7 +7,6 @@ import InfoPage from './InfoPage'
 
 function HomePage(props) {
 
-  const {username, setUsername} = props;
   const Api_Url="https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150"
   const Json_Url="http://localhost:5005/pokemons"
 
@@ -18,6 +17,9 @@ function HomePage(props) {
   const [update, setUpdate] = useState(false)
   const [pokemonInfo, setPokemonInfo] = useState({})
   const [infoLoaded, setInfoLoaded] = useState(false)
+
+  const {username} = props;
+
 
   useEffect(()=>{ //SETTING ALL POKEMON LIST FROM API
     axios.get(Api_Url)
