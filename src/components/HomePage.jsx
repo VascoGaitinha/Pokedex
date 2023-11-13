@@ -12,6 +12,7 @@ function HomePage() {
 
   const [loading, setLoading] = useState(true)
   const [allPokemonList, setAllPokemonList] = useState({})
+  const [defaultPokemonList, setDefaultPokemonList] = useState({})
   const [myPokemonList,setMyPokemonList] = useState({})
   const [update, setUpdate] = useState(false)
 
@@ -19,6 +20,7 @@ function HomePage() {
     axios.get(Api_Url)
       .then((response)=>{
         setAllPokemonList(response.data.results)
+        setDefaultPokemonList(response.data.results)
         setLoading(false)
       })
       .catch((error)=> {console.log(error)})
@@ -44,6 +46,7 @@ function HomePage() {
             Json_Url={Json_Url}
             update={update}
             setUpdate={setUpdate}
+            defaultPokemonList={defaultPokemonList}
             />
         </div>)}
     </div>

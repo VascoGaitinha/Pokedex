@@ -3,12 +3,12 @@ import PokemonCard from "./pokemonCard";
 
 const RightSide = (props) =>{
 
-    const{allPokemonList, setAllPokemonList,Json_Url, update, setUpdate, } = props;
+    const{allPokemonList, setAllPokemonList,Json_Url, update, setUpdate,defaultPokemonList } = props;
 
     return(
         <div>
         <h1>Pokemon List</h1>
-        <SearchBar allPokemonList={allPokemonList} setAllPokemonList={setAllPokemonList}/>
+        <SearchBar allPokemonList={allPokemonList} setAllPokemonList={setAllPokemonList} defaultPokemonList={defaultPokemonList}/>
         <div className="pokemon-card-list-right">
         {allPokemonList.map((pokemon,index)=>{ // Map All Pokemons in list and passing URL to PokemonCard
             return(

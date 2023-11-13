@@ -49,7 +49,7 @@ const LeftSide = (props) =>{
         <div>
         {myListLoading && <h1>.:Loading:.</h1>}
         {!myListLoading &&
-        <>
+        <div>
             <h1>Pokedex</h1>
 
             <div className="pokemon-card-list-left">
@@ -80,7 +80,7 @@ const LeftSide = (props) =>{
                     )
             })} 
             </div>
-            </>}
+            </div>}
         </div>
     )
 }

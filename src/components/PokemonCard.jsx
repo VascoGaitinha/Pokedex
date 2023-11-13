@@ -13,7 +13,7 @@ let PokemonCard = (props) =>{
             setThisPokemon(response.data)
             setThisPokemonLoading(false)
         })
-    },[])
+    },[url])
 
     const clickAdd = () =>{
         axios.post(Json_Url, thisPokemon)
@@ -22,9 +22,7 @@ let PokemonCard = (props) =>{
 
     return( // Rendering a pokemon card with info from all pokemons on allPokemonList
         <div className="pokemon-card">
-            {thisPokemonLoading && <h1>Loading</h1>}
-            {!thisPokemonLoading && 
-            <div>
+            {thisPokemonLoading? (<h2>Loading</h2>): <div>
                 <div>
                     <img src={thisPokemon.sprites.front_default}></img>
                 </div>
@@ -32,6 +30,7 @@ let PokemonCard = (props) =>{
                     <h2>{thisPokemon.name.toUpperCase()}</h2>
                 </div>
             </div>}
+            
             <button onClick={clickAdd}>+</button>
         </div>
     )
