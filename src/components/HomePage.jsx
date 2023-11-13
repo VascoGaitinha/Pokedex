@@ -40,6 +40,7 @@ function HomePage() {
             <InfoPage/>
             <RightSide
             allPokemonList={allPokemonList}
+            setAllPokemonList={setAllPokemonList}
             Json_Url={Json_Url}
             update={update}
             setUpdate={setUpdate}

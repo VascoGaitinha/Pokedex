@@ -1,12 +1,14 @@
+import SearchBar from "./SearchBar";
 import PokemonCard from "./pokemonCard";
 
-let RightSide = (props) =>{
+const RightSide = (props) =>{
 
-    const{allPokemonList,Json_Url, update, setUpdate} = props;
+    const{allPokemonList, setAllPokemonList,Json_Url, update, setUpdate, } = props;
 
     return(
         <div>
         <h1>Pokemon List</h1>
+        <SearchBar allPokemonList={allPokemonList} setAllPokemonList={setAllPokemonList}/>
         <div className="pokemon-card-list-right">
         {allPokemonList.map((pokemon,index)=>{ // Map All Pokemons in list and passing URL to PokemonCard
             return(

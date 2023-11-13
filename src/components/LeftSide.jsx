@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState,useEffect } from "react";
 
-let LeftSide = (props) =>{
+const LeftSide = (props) =>{
     const {myPokemonList, setMyPokemonList,Json_Url,update, setUpdate} = props;
    
     const[myListLoading, setmyListLoading] = useState(true)
