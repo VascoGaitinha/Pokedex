@@ -2,8 +2,8 @@ import axios from "axios"
 import { useState,useEffect } from "react";
 
 const LeftSide = (props) =>{
-    const {myPokemonList, setMyPokemonList,Json_Url,update, setUpdate} = props;
-   
+    const {myPokemonList, setMyPokemonList,Json_Url,update, setUpdate, username} = props;
+
     const[myListLoading, setmyListLoading] = useState(true)
     const[rename, setRename] = useState("")
 
@@ -18,7 +18,7 @@ const LeftSide = (props) =>{
         .catch((error) => {
             console.error("Error fetching data:", error);
         });
-
+console.log(username)
     },[update])
 
     const clickRemove = (i) => {
@@ -50,7 +50,7 @@ const LeftSide = (props) =>{
         {myListLoading && <h1>.:Loading:.</h1>}
         {!myListLoading &&
         <div>
-            <h1>Pokedex</h1>
+            <h1>{username} Pokedex</h1>
 
             <div className="pokemon-card-list-left">
             {myPokemonList.map((pokemon, index)=>{
@@ -58,7 +58,7 @@ const LeftSide = (props) =>{
                     <div key={index}>
                         <div>
                             <h2 id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</h2>
-                            <input 
+                            <input
                             id={`rename-${pokemon.name}`}
                             style={{display :"none"}}
                             onChange={(e) => setRename(e.target.value)}
@@ -76,9 +76,9 @@ const LeftSide = (props) =>{
                                 <button onClick={() => showInput(pokemon.name)}>R</button>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     )
-            })} 
+            })}
             </div>
             </div>}
         </div>

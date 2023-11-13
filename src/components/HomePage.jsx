@@ -5,8 +5,9 @@ import LeftSide from './LeftSide'
 import RightSide from './RightSide'
 import InfoPage from './InfoPage'
 
-function HomePage() {
+function HomePage(props) {
 
+  const {username, setUsername} = props;
   const Api_Url="https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150"
   const Json_Url="http://localhost:5005/pokemons"
 
@@ -40,6 +41,7 @@ function HomePage() {
             Json_Url={Json_Url}
             setUpdate={setUpdate}
             update={update}
+            username={username}
             />
             <InfoPage pokemonInfo={pokemonInfo} infoLoaded={infoLoaded}/>
             <RightSide
