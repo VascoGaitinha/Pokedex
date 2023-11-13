@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../App.css'
 import LeftSide from './LeftSide'
-import RightSide from './RighSide'
+import RightSide from './RightSide'
+import InfoPage from './InfoPage'
 
 function HomePage() {
 
@@ -27,16 +28,17 @@ function HomePage() {
   return (
     <div>
       {loading && (<h1>.: LOADING :.</h1>)}
-      {!loading && 
-        (<div className="main-container"> 
-            <LeftSide 
+      {!loading &&
+        (<div className="main-container">
+            <LeftSide
             myPokemonList={myPokemonList}
             setMyPokemonList={setMyPokemonList}
             Json_Url={Json_Url}
             setUpdate={setUpdate}
             update={update}
             />
-            <RightSide 
+            <InfoPage/>
+            <RightSide
             allPokemonList={allPokemonList}
             Json_Url={Json_Url}
             update={update}
