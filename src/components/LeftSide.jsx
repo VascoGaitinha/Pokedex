@@ -46,7 +46,7 @@ const LeftSide = (props) =>{
     }
 
       return(
-        <div>
+        <div className="left-container">
         {myListLoading && <h1>.:Loading:.</h1>}
         {!myListLoading &&
         <div>

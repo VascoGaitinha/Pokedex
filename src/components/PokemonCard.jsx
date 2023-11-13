@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 let PokemonCard = (props) =>{
 
-    const {url,Json_Url,update, setUpdate} = props;
+    const {url,Json_Url,update, setUpdate,setPokemonInfo,setInfoLoaded} = props;
 
     const [thisPokemon, setThisPokemon] = useState({})
     const [thisPokemonLoading, setThisPokemonLoading] = useState(true)
@@ -20,8 +20,18 @@ let PokemonCard = (props) =>{
         setUpdate(!update)
     }
 
+    const mouseEnter = (x) =>{
+        console.log("Mouse on")
+        setPokemonInfo(x)
+        setInfoLoaded(true)
+    }
+
+    const mouseLeave = () =>{
+        setInfoLoaded(false)
+    }
+
     return( // Rendering a pokemon card with info from all pokemons on allPokemonList
-        <div className="pokemon-card">
+        <div className="pokemon-card" onMouseEnter={()=> mouseEnter(thisPokemon)} onMouseLeave={mouseLeave}>
             {thisPokemonLoading? (<h2>Loading</h2>): <div>
                 <div>
                     <img src={thisPokemon.sprites.front_default}></img>

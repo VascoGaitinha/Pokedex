@@ -19,7 +19,7 @@ const SearchBar = (props) => {
     return(
         <div className="search-bar">
             <input type="text" placeholder="search..."
-            onChange={(e) => filterList(e.target.value) }
+            onChange={(e) => filterList(e.target.value)}
             />
         </div>
     )

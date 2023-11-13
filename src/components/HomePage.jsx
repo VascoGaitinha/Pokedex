@@ -15,6 +15,8 @@ function HomePage() {
   const [defaultPokemonList, setDefaultPokemonList] = useState({})
   const [myPokemonList,setMyPokemonList] = useState({})
   const [update, setUpdate] = useState(false)
+  const [pokemonInfo, setPokemonInfo] = useState({})
+  const [infoLoaded, setInfoLoaded] = useState(false)
 
   useEffect(()=>{ //SETTING ALL POKEMON LIST FROM API
     axios.get(Api_Url)
@@ -39,7 +41,7 @@ function HomePage() {
             setUpdate={setUpdate}
             update={update}
             />
-            <InfoPage/>
+            <InfoPage pokemonInfo={pokemonInfo} infoLoaded={infoLoaded}/>
             <RightSide
             allPokemonList={allPokemonList}
             setAllPokemonList={setAllPokemonList}
@@ -47,6 +49,8 @@ function HomePage() {
             update={update}
             setUpdate={setUpdate}
             defaultPokemonList={defaultPokemonList}
+            setPokemonInfo={setPokemonInfo}
+            setInfoLoaded={setInfoLoaded}
             />
         </div>)}
     </div>
