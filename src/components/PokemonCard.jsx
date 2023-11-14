@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 let PokemonCard = (props) =>{
 
-    const {url,Json_Url,update, setUpdate,setPokemonInfo,setInfoLoaded} = props;
+    const {url,Json_Url,update, setUpdate,setPokemonInfo,setInfoLoaded,myPokemonList} = props;
 
     const [thisPokemon, setThisPokemon] = useState({})
     const [thisPokemonLoading, setThisPokemonLoading] = useState(true)
@@ -16,8 +16,10 @@ let PokemonCard = (props) =>{
     },[url])
 
     const clickAdd = () =>{
+        if(myPokemonList.length <6){
         axios.post(Json_Url, thisPokemon)
         setUpdate(!update)
+        }
     }
 
     const mouseEnter = (x) =>{

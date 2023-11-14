@@ -55,6 +55,8 @@ function HomePage(props) {
             defaultPokemonList={defaultPokemonList}
             setPokemonInfo={setPokemonInfo}
             setInfoLoaded={setInfoLoaded}
+            myPokemonList={myPokemonList}
+
             />
         </div>)}
     </div>
