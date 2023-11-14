@@ -42,7 +42,6 @@ let PokemonCard = (props) =>{
                     <h2>{thisPokemon.name.toUpperCase()}</h2>
                 </div>
             </div>}
-
         </div>
     )
 }
