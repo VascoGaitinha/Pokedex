@@ -1,5 +1,5 @@
 import SearchBar from "./SearchBar";
-import PokemonCard from "./pokemonCard";
+import PokemonCard from "./PokemonCard";
 
 const RightSide = (props) =>{
 

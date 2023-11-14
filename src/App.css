@@ -26,13 +26,13 @@
 }
 .left-image-and-buttons{
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 
-.pokemon.card{
+.pokemon-card{
   display:flex;
-  justify-content: end;
+  justify-content: center;
 }
 
 .pokemon-card img, h2, div{
@@ -40,7 +40,8 @@
 }
 
 .pokemon-card h2{
-  margin-top: -1rem;
+  margin-top: -0.5rem;
+  font-size: 1.05rem;
 }
 
 .left-pokemon-name-input{
@@ -67,7 +68,6 @@
 .left-container{
   width:30%;
   height: inherit;
-  padding-right: 2%;
 }
 .mid-container{
   width: 20%;
