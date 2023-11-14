@@ -3,13 +3,15 @@
   margin: 0 auto;
   padding-bottom: 10%;
   text-align: center;
+  height: 75vh;
+
 }
 
 .pokemon-card-list-right{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   overflow-y: scroll;
-  height: 20rem;
+  height: 25rem;
 }
 
 .pokemon-card-list-left{
@@ -46,7 +48,8 @@
 }
 
 .search-bar{
-  margin-top: -2rem;
+  margin-top: -1.75rem;
+  margin-bottom: 1rem;
 }
 
 .pokemon-details-image{
@@ -57,20 +60,70 @@
 
 .pokemon-details-image-div{
   background-color: rgba(245, 7, 7, 0.25);
-  border-radius: 50%;
-  
+  border-radius: 33%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .left-container{
   width:30%;
-  height: 15rem;
+  height: inherit;
+  padding-right: 2%;
 }
 .mid-container{
   width: 20%;
-  height: 15rem;
+  height: inherit;
+  padding:0 2%;
+
 }
-.rigth-container{
+.right-container{
   width: 40%;
-  height: 15rem;
+  height: inherit;
+
 }
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 33rem;
+}
+
+
+
+.main-container > div{
+  border:1px solid whitesmoke;
+  background: rgb(128,128,128);
+background: radial-gradient(circle, rgba(128,128,128,0.45) 0%, rgba(128,128,128,0.4009978991596639) 100%);
+  border-radius: 5%;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.pokemon-types-icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+.pokemon-types-icons img{
+  width: 2rem;
+  height: 2rem;
+}
+
+
+
+/* Styles for screens under 1444 pixels */
+@media screen and (max-width: 1444px) {
+  /* Your styles go here */
+  .pokemon-card-list-right{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: scroll;
+  }
+
+  /* Add more styles as needed for smaller screens */
+}
+
 
