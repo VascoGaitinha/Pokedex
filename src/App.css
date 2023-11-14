@@ -39,7 +39,7 @@
 .pokemon-card img,
 h2,
 div {
-  margin: 0;
+  margin-bottom: 2px;
 }
 
 .pokemon-card h2 {
@@ -69,7 +69,7 @@ div {
 }
 
 .left-container {
-  width: 30%;
+  width: 20%;
   height: inherit;
 }
 
@@ -81,7 +81,7 @@ div {
 }
 
 .right-container {
-  width: 40%;
+  width: 50%;
   height: inherit;
 }
 
@@ -91,6 +91,7 @@ div {
   flex-direction: row;
   justify-content: space-between;
   height: 33rem;
+  padding: 6rem 0;
 }
 
 .main-container p {
@@ -119,20 +120,4 @@ div {
 .pokemon-types-icons img {
   width: 2rem;
   height: 2rem;
-}
-
-
-
-
-/* Styles for screens under 1444 pixels */
-@media screen and (max-width: 1444px) {
-
-  /* Your styles go here */
-  .pokemon-card-list-right {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    overflow-y: scroll;
-  }
-
-  /* Add more styles as needed for smaller screens */
 }
