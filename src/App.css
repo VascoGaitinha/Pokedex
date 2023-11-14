@@ -32,16 +32,21 @@
 
 .pokemon-card{
   display:flex;
-  justify-content: center;
+  justify-content: end;
 }
 
 .pokemon-card img, h2, div{
   margin: 0;
 }
 
+.pokemon-card img{
+  width: auto;
+  height: 50px;
+}
+
 .pokemon-card h2{
-  margin-top: -0.5rem;
-  font-size: 1.05rem;
+  margin-top: -1rem;
+  font
 }
 
 .left-pokemon-name-input{
@@ -69,6 +74,7 @@
   width:30%;
   height: inherit;
 }
+
 .mid-container{
   width: 20%;
   height: inherit;
