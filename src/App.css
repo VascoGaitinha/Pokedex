@@ -30,18 +30,24 @@
   align-items: center;
 }
 
-.pokemon.card{
+.pokemon-card{
   display:flex;
-  justify-content: end;
+  justify-content: center;
+  padding: 10px 0px;
 }
-
-.pokemon-card img, h2, div{
+git a
   margin: 0;
 }
 
-.pokemon-card h2{
-  margin-top: -1rem;
+.pokemon-card img{
+  width: auto;
+  height: 50px;
 }
+
+.pokemon-card h2{
+  font-size: 1em;
+}
+
 
 
 
