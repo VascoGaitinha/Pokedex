@@ -55,7 +55,7 @@ console.log(username)
                 return(
                     <div key={index}>
                         <div>
-                            <h2 id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</h2>
+                            <h2 onDoubleClick={() => showInput(pokemon.name)} id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</h2>
                             <input
                             id={`rename-${pokemon.name}`}
                             style={{display :"none"}}
@@ -65,14 +65,11 @@ console.log(username)
 
                             </input>
                         </div>
-                        <div className="left-image-and-buttons">
+                        <div onClick={ ()=> clickRemove(pokemon.id)} className="left-image-and-buttons">
                             <div>
                                 <img className="left-pokemon-item" src={pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default}/>
                             </div>
-                            <div className="left-button-div">
-                                <button onClick={ ()=> clickRemove(pokemon.id)}>-</button>
-                                <button onClick={() => showInput(pokemon.name)}>R</button>
-                            </div>
+
                         </div>
                     </div>
                     )

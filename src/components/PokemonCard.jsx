@@ -31,7 +31,7 @@ let PokemonCard = (props) =>{
     }
 
     return( // Rendering a pokemon card with info from all pokemons on allPokemonList
-        <div className="pokemon-card" onMouseEnter={()=> mouseEnter(thisPokemon)} onMouseLeave={mouseLeave}>
+        <div onMouseDown={clickAdd} className="pokemon-card" onMouseEnter={()=> mouseEnter(thisPokemon)} onMouseLeave={mouseLeave}>
             {thisPokemonLoading? (<h2>Loading</h2>): <div>
                 <div>
                     <img src={thisPokemon.sprites.front_default}></img>
@@ -41,7 +41,6 @@ let PokemonCard = (props) =>{
                 </div>
             </div>}
             
-            <button onClick={clickAdd}>+</button>
         </div>
     )
 }

@@ -14,7 +14,6 @@ function InfoPage(props) {
     <div className='mid-container' style={{ visibility: infoLoaded ? "visible" : "hidden" }}>
       {!infoLoaded ? (<p>Loading</p>) :      
       <div>
-        <img src={`../../public/pokemon-icons/Pokemon_Type_Icon_Bug.png`}/>
         <h1>Details</h1>
         <div className='pokemon-details-image-div' style={{ backgroundColor: colors[types.indexOf(pokemonInfo.types[0].type.name)] }}>
           <img 

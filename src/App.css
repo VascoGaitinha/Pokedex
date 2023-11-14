@@ -1,5 +1,5 @@
 #root {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   padding-bottom: 10%;
   text-align: center;
@@ -14,6 +14,11 @@
   height: 25rem;
 }
 
+.pokemon-card-list-right::-webkit-scrollbar {
+  display: none;
+}
+
+
 .pokemon-card-list-left{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -23,11 +28,6 @@
   display: flex;
   justify-content: right;
   align-items: center;
-}
-
-.left-button-div{
-  display: flex;
-  flex-direction: column;
 }
 
 .pokemon.card{
@@ -78,8 +78,8 @@
 .right-container{
   width: 40%;
   height: inherit;
-
 }
+
 
 .main-container{
   display: flex;
@@ -88,12 +88,16 @@
   height: 33rem;
 }
 
+.main-container p{
+  font-size: 1.25em;
+}
+
 
 
 .main-container > div{
   border:1px solid whitesmoke;
   background: rgb(128,128,128);
-background: radial-gradient(circle, rgba(128,128,128,0.45) 0%, rgba(128,128,128,0.4009978991596639) 100%);
+background: radial-gradient(circle, rgba(128,128,128,0.45) 0%, rgba(128,128,128,0.5158438375350141) 100%);
   border-radius: 5%;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
@@ -114,12 +118,13 @@ background: radial-gradient(circle, rgba(128,128,128,0.45) 0%, rgba(128,128,128,
 
 
 
+
 /* Styles for screens under 1444 pixels */
 @media screen and (max-width: 1444px) {
   /* Your styles go here */
   .pokemon-card-list-right{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     overflow-y: scroll;
   }
 
