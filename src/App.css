@@ -34,7 +34,7 @@
 .pokemon-card {
   display: flex;
   justify-content: center;
-  border: 1px solid rgba(128, 128, 128, 0.548);
+  border: 1px solid rgba(128, 128, 128, 0.01);
   transition: border-radius 0.3s linear, box-shadow 0.3s linear, color 0.3s linear;
 
 }
@@ -162,4 +162,8 @@ input:focus {
   flex-direction: column;
   justify-content: space-between;
   height: 8.5rem;
+}
+
+.login{
+  padding-top: 20%;
 }
