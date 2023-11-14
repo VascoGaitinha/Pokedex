@@ -53,7 +53,7 @@ console.log(username)
             <div className="pokemon-card-list-left">
             {myPokemonList.map((pokemon, index)=>{
                 return(
-                    <div key={index}>
+                    <div key={index} className="left-pokemon-card">
                         <div>
                             <h2 onDoubleClick={() => showInput(pokemon.name)} id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</h2>
                             <input
