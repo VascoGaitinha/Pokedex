@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React from 'react'
 
 function LandingScreen(props) {
@@ -24,11 +24,6 @@ function LandingScreen(props) {
           onChange={(e) => chooseName(e.target.value)}
           onKeyDown={handleEnterKey}
         />
-      </div>
-      <div>
-        <Link to="/pokedex">
-        <button></button>
-        </Link>
       </div>
     </div>
   )

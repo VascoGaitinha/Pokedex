@@ -67,7 +67,7 @@ div {
 }
 
 .left-pokemon-name-input {
-  margin: 7% auto;
+  margin: 15% auto 0 auto;
 }
 
 .search-bar {
@@ -133,8 +133,6 @@ input:focus {
   font-size: 1.25em;
 }
 
-
-
 .main-container>div {
   border: 1px solid whitesmoke;
   background: rgb(128, 128, 128);
@@ -166,4 +164,28 @@ input:focus {
 
 .login{
   padding-top: 20%;
+}
+
+.login input {
+  width: 25%;
+}
+
+* h1,h2,p{
+  text-shadow: 1px 1px 2px black;
+}
+
+@media only screen and (max-width: 1360px) {
+  *{
+    scale: 0.98;
+
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 33rem;
+    padding: 1rem 0;
+  }
+
 }
