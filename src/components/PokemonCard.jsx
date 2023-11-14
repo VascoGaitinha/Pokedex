@@ -34,13 +34,13 @@ let PokemonCard = (props) =>{
         <div onMouseDown={clickAdd} className="pokemon-card" onMouseEnter={()=> mouseEnter(thisPokemon)} onMouseLeave={mouseLeave}>
             {thisPokemonLoading? (<h2>Loading</h2>): <div>
                 <div>
-                    <img src={thisPokemon.sprites.versions["generation-v"]["black-white"].animated.front_default}/>
+                    <img src={thisPokemon.sprites.front_default}></img>
                 </div>
                 <div>
                     <h2>{thisPokemon.name.toUpperCase()}</h2>
                 </div>
             </div>}
-            
+
         </div>
     )
 }

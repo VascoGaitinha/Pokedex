@@ -7,7 +7,7 @@
 
 }
 
-.pokemon-card-list-right{
+.pokemon-card-list-right {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   overflow-y: scroll;
@@ -19,96 +19,95 @@
 }
 
 
-.pokemon-card-list-left{
+.pokemon-card-list-left {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
 }
-.left-image-and-buttons{
+
+.left-image-and-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.pokemon-card{
-  display:flex;
-  justify-content: end;
+.pokemon-card {
+  display: flex;
+  justify-content: center;
 }
 
-.pokemon-card img, h2, div{
+.pokemon-card img,
+h2,
+div {
   margin: 0;
 }
 
-.pokemon-card img{
-  width: auto;
-  height: 50px;
+.pokemon-card h2 {
+  margin-top: -0.5rem;
+  font-size: 1.05rem;
 }
 
-.pokemon-card h2{
-  margin-top: -1rem;
-  font
-}
-
-.left-pokemon-name-input{
+.left-pokemon-name-input {
   margin: 7% auto;
 }
 
-.search-bar{
+.search-bar {
   margin-top: -1.75rem;
   margin-bottom: 1rem;
 }
 
-.pokemon-details-image{
+.pokemon-details-image {
   max-width: 10rem;
   height: 15rem;
-    padding: 5%;
+  padding: 5%;
 }
 
-.pokemon-details-image-div{
+.pokemon-details-image-div {
   background-color: rgba(245, 7, 7, 0.25);
   border-radius: 33%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.left-container{
-  width:30%;
+.left-container {
+  width: 30%;
   height: inherit;
 }
 
-.mid-container{
+.mid-container {
   width: 20%;
   height: inherit;
-  padding:0 2%;
+  padding: 0 2%;
 
 }
-.right-container{
+
+.right-container {
   width: 40%;
   height: inherit;
 }
 
 
-.main-container{
+.main-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 33rem;
 }
 
-.main-container p{
+.main-container p {
   font-size: 1.25em;
 }
 
 
 
-.main-container > div{
-  border:1px solid whitesmoke;
-  background: rgb(128,128,128);
-background: radial-gradient(circle, rgba(128,128,128,0.45) 0%, rgba(128,128,128,0.5158438375350141) 100%);
+.main-container>div {
+  border: 1px solid whitesmoke;
+  background: rgb(128, 128, 128);
+  background: radial-gradient(circle, rgba(128, 128, 128, 0.45) 0%, rgba(128, 128, 128, 0.5158438375350141) 100%);
   border-radius: 5%;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
-.pokemon-types-icons{
+.pokemon-types-icons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -117,7 +116,7 @@ background: radial-gradient(circle, rgba(128,128,128,0.45) 0%, rgba(128,128,128,
 
 }
 
-.pokemon-types-icons img{
+.pokemon-types-icons img {
   width: 2rem;
   height: 2rem;
 }
@@ -127,8 +126,9 @@ background: radial-gradient(circle, rgba(128,128,128,0.45) 0%, rgba(128,128,128,
 
 /* Styles for screens under 1444 pixels */
 @media screen and (max-width: 1444px) {
+
   /* Your styles go here */
-  .pokemon-card-list-right{
+  .pokemon-card-list-right {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow-y: scroll;
@@ -136,5 +136,3 @@ background: radial-gradient(circle, rgba(128,128,128,0.45) 0%, rgba(128,128,128,
 
   /* Add more styles as needed for smaller screens */
 }
-
-
