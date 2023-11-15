@@ -18,9 +18,7 @@ let PokemonCard = (props) =>{
     const clickAdd = () =>{
         if(myPokemonList.length <6){
         axios.post(Json_Url, thisPokemon)
-        .then(() =>
         setUpdate(!update)
-        )
         }
     }
 
