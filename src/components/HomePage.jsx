@@ -7,7 +7,7 @@ import InfoPage from './InfoPage'
 
 function HomePage(props) {
 
-  const Api_Url="https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150"
+  const Api_Url="https://pokeapi.co/api/v2/pokemon/?offset=0&limit=645"
   const Json_Url="http://localhost:5005/pokemons"
 
   const [loading, setLoading] = useState(true)

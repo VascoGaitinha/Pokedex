@@ -49,7 +49,7 @@ console.log(username)
         {myListLoading && <h1>.:Loading:.</h1>}
         {!myListLoading &&
         <div>
-            <h1>{username} Pokedex</h1>
+            <h1>{username.toUpperCase()} POKEDEX</h1>
 
             <div className="pokemon-card-list-left">
             {myPokemonList.map((pokemon, index)=>{

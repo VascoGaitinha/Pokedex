@@ -15,7 +15,7 @@ function LandingScreen(props) {
   return (
     <div className='login'>
       <div>
-        <h1>Enter your name</h1>
+        <h1>ENTER YOUR NAME</h1>
       </div>
       <div>
         <input

@@ -7,14 +7,14 @@ const RightSide = (props) =>{
 
     return(
         <div className="right-container">
-        <h1>Pokemon List</h1>
+        <h1>POKEMON LIST</h1>
         <SearchBar allPokemonList={allPokemonList} setAllPokemonList={setAllPokemonList} defaultPokemonList={defaultPokemonList}/>
         <div className="pokemon-card-list-right">
         {allPokemonList.map((pokemon,index)=>{ // Map All Pokemons in list and passing URL to PokemonCard
             return(
-                <PokemonCard 
+                <PokemonCard
                 key={index}
-                url={pokemon.url} 
+                url={pokemon.url}
                 Json_Url={Json_Url}
                 setUpdate = {setUpdate}
                 update = {update}
