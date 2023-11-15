@@ -20,7 +20,7 @@ const LeftSide = (props) =>{
 
     const clickRemove = (i) => {
         axios.delete(`${Json_Url}/${i}`)
-        .then(setUpdate(!update))
+        .then(()=> setUpdate(!update))
         .catch((error)=>console.log("ERRROR!!",error))
     }
 

@@ -21,6 +21,7 @@ function HomePage(props) {
 
   const {username} = props;
 
+  
 
 
   useEffect(()=>{ //SETTING ALL POKEMON LIST FROM API
