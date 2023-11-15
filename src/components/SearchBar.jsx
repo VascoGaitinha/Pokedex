@@ -53,7 +53,7 @@ const SearchBar = (props) => {
             onChange={(e) => filterList(e.target.value)}
             />
             <button onClick={randomize}>
-                <img src="../../public/dice.jpg" alt="Image Alt Text"/>
+                <img src="/dice.jpg" alt="Image Alt Text"/>
             </button>
         </div>
     )

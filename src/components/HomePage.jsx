@@ -50,7 +50,7 @@ function HomePage(props) {
     <div>
       <div style={{display: 'none'}}>
         <audio id="myAudio" autoPlay loop>
-          <source src="././public/pokedex_soundtrack.mp3" type="audio/mp3" />
+          <source src="/pokedex_soundtrack.mp3" type="audio/mp3" />
           Your browser does not support the audio element.
         </audio>
       </div>
