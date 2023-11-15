@@ -31,9 +31,37 @@ function HomePage(props) {
       .catch((error)=> {console.log(error)})
 
   },[])
+
+  useEffect(() => {
+    // Function to start the music
+    const startMusic = () => {
+      const audioElement = document.getElementById('myAudio');
+      if (audioElement) {
+        audioElement.play();
+      }
+    };
+
+    // Call the function when the component mounts
+    startMusic();
+
+    // Clean up function (optional)
+    return () => {
+      const audioElement = document.getElementById('myAudio');
+      if (audioElement) {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+      }
+    };
+  }, []);
   //_______________________________________________________
   return (
     <div>
+      <div style={{display: 'none'}}>
+        <audio id="myAudio" autoPlay>
+          <source src="././public/pokedex_soundtrack.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
       {loading && (<h1>.: LOADING :.</h1>)}
       {!loading &&
         (<div className="main-container">

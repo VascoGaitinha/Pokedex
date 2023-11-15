@@ -36,8 +36,12 @@
   display: flex;
   justify-content: center;
   border: 1px solid rgba(128, 128, 128, 0.01);
-  transition: border-radius 0.3s linear, box-shadow 0.3s linear, color 0.3s linear;
-
+  transition:
+    border-radius 0.3s linear,
+    box-shadow 0.3s linear,
+    color 0.3s linear,
+    background-color 0.3s linear,
+    background 0.3s linear;
 }
 
 .pokemon-card:hover {
@@ -156,11 +160,26 @@ input:focus {
   height: 2rem;
 }
 
-.left-pokemon-card{
+.left-pokemon-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 8.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.01);
+  transition: border-radius 0.3s ease-out, box-shadow 0.3s linear, color 0.3s linear;
+}
+
+.left-pokemon-card:hover {
+  display: flex;
+  border: 1px solid rgba(255, 0, 0, 0.30);
+  border-radius: 25%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background: rgb(76, 175, 80);
+  background: radial-gradient(circle, rgba(76, 175, 80, 0) 55%, rgba(255, 0, 0, 0.25) 100%);
+}
+
+.left-pokemon-card-sub {
+  margin-top: -10px;
 }
 
 .login{
