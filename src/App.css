@@ -87,11 +87,12 @@ div {
 
 input {
   width: 50%;
-  padding: 5px;
+  padding: 5px 0 5px 15px;
   border: 1px solid #ccc;
   border-radius: 20px;
   outline: none;
   transition: border-color 0.3s ease;
+  font-size: 18px;
 }
 
 input:focus {
@@ -211,22 +212,11 @@ input:focus {
 }
 
 button {
-  border-radius: 20%;
-  border: 1px solid transparent;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a8c;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
+  border-radius: 100%;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button:hover {
+  border-color: rgb(76, 175, 80);
 }
 
 button img{
@@ -237,7 +227,7 @@ button img{
 }
 
 @media only screen and (max-width: 1360px) {
-  
+
   *{
     scale: 0.98;
   }

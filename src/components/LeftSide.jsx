@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState,useEffect } from "react";
 
 const LeftSide = (props) =>{
-    const {myPokemonList, setMyPokemonList,Json_Url,update, setUpdate, username} = props;
+    const {myPokemonList, setMyPokemonList,Json_Url,update, setUpdate, username, setPokemonInfo, setInfoLoaded} = props;
 
     const[myListLoading, setmyListLoading] = useState(true)
     const[rename, setRename] = useState("")
@@ -42,6 +42,15 @@ const LeftSide = (props) =>{
         pokemonName.style.display ="none"
     }
 
+    const mouseEnter = (x) =>{
+        setPokemonInfo(x)
+        setInfoLoaded(true)
+    }
+
+    const mouseLeave = () =>{
+        setInfoLoaded(false)
+    }
+
       return(
         <div className="left-container">
         {myListLoading && <h1>.:Loading:.</h1>}
@@ -52,7 +61,9 @@ const LeftSide = (props) =>{
             <div className="pokemon-card-list-left">
             {myPokemonList.map((pokemon, index)=>{
                 return(
-                    <div key={index} className="left-pokemon-card">
+                    <div key={index} className="left-pokemon-card" 
+                    onMouseEnter={()=> mouseEnter(pokemon)} onMouseLeave={mouseLeave}
+                    >
                         <div className="left-pokemon-card-sub">
                             <h2 onDoubleClick={() => showInput(pokemon.name)} id={`left-pokemon-name-${pokemon.name}`}>{pokemon.name.toUpperCase()}</h2>
                             <input
@@ -61,10 +72,9 @@ const LeftSide = (props) =>{
                             onChange={(e) => setRename(e.target.value)}
                             onKeyDown={(e) => e.key === 'Enter' && clickRename(pokemon.id, pokemon)}
                             className="left-pokemon-name-input" type="text" placeholder={pokemon.name}>
-
                             </input>
                         </div>
-                        <div onClick={ ()=> clickRemove(pokemon.id)} className="left-image-and-buttons">
+                        <div className="left-image-and-buttons" onClick={ ()=> clickRemove(pokemon.id)}>
                             <div>
                                 <img className="left-pokemon-item" src={pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default}/>
                             </div>

@@ -15,24 +15,36 @@ const SearchBar = (props) => {
         searched.length===0 && setAllPokemonList(defaultPokemonList)
         }
 
-    const randomize = () =>{
-        if (myPokemonList.length <6){
-        randomIndexes = []
-        for(let i =0; i<6-myPokemonList.length ; i++){
-            let rand = Math.floor(Math.random() * 649) + 1;
-            randomIndexes.push(rand)
-            console.log(randomIndexes)
-        }
-        randomIndexes.map((id) =>{
-            axios.get(`${singlePokemon_url}${id}`)
-            .then((response) => {
-                axios.post(Json_Url,response.data)
-                setUpdate(!update)
-
-            })
-        })}
+        const randomize = () => {
+            let randomIndexes = [];
+            
+            if (myPokemonList.length < 6) {
+                for (let i = 0; i < 6 - myPokemonList.length; i++) {
+                    let rand = Math.floor(Math.random() * 649) + 1;
+                    randomIndexes.push(rand);
+                    console.log(randomIndexes);
+                }
         
-    }
+                if (randomIndexes.length !== 0) {
+                    randomIndexes.forEach((id) => {
+                        axios.get(`${singlePokemon_url}${id}`)
+                            .then((response) => {
+                                axios.post(Json_Url, response.data)
+                                    .then(() => {
+                                        console.log(`Posting ${response.data.name}`);
+                                        setUpdate(!update);
+                                    })
+                                    .catch((error) => {
+                                        console.error('Error posting data:', error);
+                                    });
+                            })
+                            .catch((error) => {
+                                console.error('Error fetching Pokemon data:', error);
+                            });
+                        });
+                    }
+                }
+            };
     
 
     return(

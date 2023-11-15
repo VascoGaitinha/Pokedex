@@ -7,8 +7,9 @@ import InfoPage from './InfoPage'
 
 function HomePage(props) {
 
+
   const Api_Url="https://pokeapi.co/api/v2/pokemon/?offset=0&limit=645"
-  const Json_Url="http://localhost:5005/pokemons"
+  const Json_Url="https://pokedexbackend.onrender.com/pokemons"
 
   const [loading, setLoading] = useState(true)
   const [allPokemonList, setAllPokemonList] = useState({})
@@ -19,6 +20,7 @@ function HomePage(props) {
   const [infoLoaded, setInfoLoaded] = useState(false)
 
   const {username} = props;
+
 
 
   useEffect(()=>{ //SETTING ALL POKEMON LIST FROM API
@@ -41,17 +43,7 @@ function HomePage(props) {
       }
     };
 
-    // Call the function when the component mounts
     startMusic();
-
-    // Clean up function (optional)
-    return () => {
-      const audioElement = document.getElementById('myAudio');
-      if (audioElement) {
-        audioElement.pause();
-        audioElement.currentTime = 0;
-      }
-    };
   }, []);
   //_______________________________________________________
   return (
@@ -72,6 +64,8 @@ function HomePage(props) {
             setUpdate={setUpdate}
             update={update}
             username={username}
+            setPokemonInfo={setPokemonInfo}
+            setInfoLoaded={setInfoLoaded}
             />
             <InfoPage pokemonInfo={pokemonInfo} infoLoaded={infoLoaded}/>
             <RightSide
