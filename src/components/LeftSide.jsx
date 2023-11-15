@@ -6,7 +6,6 @@ const LeftSide = (props) =>{
 
     const[myListLoading, setmyListLoading] = useState(true)
     const[rename, setRename] = useState("")
-    console.log(myPokemonList.length)
 
     useEffect(()=>{
         axios.get(Json_Url)
@@ -17,7 +16,6 @@ const LeftSide = (props) =>{
         .catch((error) => {
             console.error("Error fetching data:", error);
         });
-console.log(username)
     },[update])
 
     const clickRemove = (i) => {

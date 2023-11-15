@@ -32,16 +32,17 @@
 }
 
 .pokemon-card {
+  cursor: pointer;
   height: max-content;
   display: flex;
   justify-content: center;
   border: 1px solid rgba(128, 128, 128, 0.01);
   transition:
-    border-radius 0.3s linear,
-    box-shadow 0.3s linear,
-    color 0.3s linear,
-    background-color 0.3s linear,
-    background 0.3s linear;
+  border-radius 0.5s linear,
+  box-shadow 0.5s linear,
+  color 0.5s linear,
+  background-color 0.5s linear,
+  background 0.5s linear;
 }
 
 .pokemon-card:hover {
@@ -50,6 +51,8 @@
   border: 1px solid #4CAF50;
   border-radius: 25%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background: rgb(76, 175, 80);
+  background: radial-gradient(circle, rgba(76, 175, 80, 0) 55%, rgba(76, 175, 80, 0.45) 100%);
 }
 
 
@@ -68,7 +71,6 @@ div {
 
 .pokemon-card h2 {
   margin-top: -0.5rem;
-  font-size: 1.05rem;
 }
 
 .left-pokemon-name-input {
@@ -95,6 +97,8 @@ input {
 input:focus {
   border-color: #4CAF50;
 }
+
+
 
 .pokemon-details-image {
   max-width: 10rem;
@@ -134,9 +138,6 @@ input:focus {
   padding: 6rem 0;
 }
 
-.main-container p {
-  font-size: 1.25em;
-}
 
 .main-container>div {
   border: 1px solid whitesmoke;
@@ -161,12 +162,18 @@ input:focus {
 }
 
 .left-pokemon-card {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 8.5rem;
   border: 1px solid rgba(128, 128, 128, 0.01);
-  transition: border-radius 0.3s ease-out, box-shadow 0.3s linear, color 0.3s linear;
+  transition:
+  border-radius 0.5s linear,
+  box-shadow 0.5s linear,
+  color 0.5s linear,
+  background-color 0.5s linear,
+  background 0.5s linear;
 }
 
 .left-pokemon-card:hover {
@@ -194,10 +201,45 @@ input:focus {
   text-shadow: 1px 1px 2px black;
 }
 
+* h1{
+  font-size: 2.5em;
+  line-height: 0.9;
+}
+
+* h2{
+  font-size: 1.05rem;
+}
+
+button {
+  border-radius: 20%;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a8c;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button img{
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin: 0;
+}
+
 @media only screen and (max-width: 1360px) {
+  
   *{
     scale: 0.98;
-
   }
 
   .main-container {
@@ -209,3 +251,4 @@ input:focus {
   }
 
 }
+

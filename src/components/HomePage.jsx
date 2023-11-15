@@ -84,7 +84,6 @@ function HomePage(props) {
             setPokemonInfo={setPokemonInfo}
             setInfoLoaded={setInfoLoaded}
             myPokemonList={myPokemonList}
-
             />
         </div>)}
     </div>

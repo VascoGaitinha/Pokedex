@@ -23,7 +23,6 @@ let PokemonCard = (props) =>{
     }
 
     const mouseEnter = (x) =>{
-        console.log("Mouse on")
         setPokemonInfo(x)
         setInfoLoaded(true)
     }

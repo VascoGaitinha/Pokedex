@@ -8,7 +8,6 @@ function InfoPage(props) {
   const icons= data[2]
 
   const {pokemonInfo,infoLoaded} = props;
-  console.log(data)
 
   return (
     <div className='mid-container' style={{ visibility: infoLoaded ? "visible" : "hidden" }}>
