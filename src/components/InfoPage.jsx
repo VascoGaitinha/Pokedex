@@ -11,16 +11,16 @@ function InfoPage(props) {
 
   return (
     <div className='mid-container' style={{ visibility: infoLoaded ? "visible" : "hidden" }}>
-      {!infoLoaded ? (<p>Loading</p>) :      
+      {!infoLoaded ? (<p>Loading</p>) :
       <div>
-        <h1>Details</h1>
+        <h1>DETAILS</h1>
         <div className='pokemon-details-image-div' style={{ backgroundColor: colors[types.indexOf(pokemonInfo.types[0].type.name)] }}>
-          <img 
+          <img
           className='pokemon-details-image' src={pokemonInfo.sprites.other.dream_world.front_default} alt="pkm img"/>
         </div>
         <h2>{pokemonInfo.name.toUpperCase()}</h2>
 
-        {pokemonInfo.types.length === 1? 
+        {pokemonInfo.types.length === 1?
         (<div className='pokemon-types-icons'>
           <img src={icons[types.indexOf((pokemonInfo.types[0].type.name))]}/>
         </div>
@@ -29,11 +29,11 @@ function InfoPage(props) {
             <img src={icons[types.indexOf((pokemonInfo.types[0].type.name))]}/>
             <img src={icons[types.indexOf((pokemonInfo.types[1].type.name))]}/>
           </div>
-        )}        
+        )}
 
 
         <p>NR:{pokemonInfo.id}</p>
-        <p>WEIGHT:{pokemonInfo.weight} Lbs</p> 
+        <p>WEIGHT:{pokemonInfo.weight} Lbs</p>
       </div>
 }
 
