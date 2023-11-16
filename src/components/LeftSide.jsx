@@ -18,17 +18,31 @@ const LeftSide = (props) =>{
         });
     },[update])
 
+
     const clickRemove = (i) => {
         axios.delete(`${Json_Url}/${i}`)
-        .then(()=> setUpdate(!update))
-        .catch((error)=>console.log("ERRROR!!",error))
+        .then(() => {
+            setTimeout(() => {
+                setUpdate(!update);
+                console.log("Deleted complete");
+            }, 1500);
+        })
+        .catch((error) => {
+            console.log("ERROR!!", error);
+        });
     }
+    
 
     const clickRename = (id, pokemon) =>{
         let newPokemon = {...pokemon}
         newPokemon.name = rename
         axios.put(`${Json_Url}/${id}`, newPokemon)
-        .then(setUpdate(!update))
+        .then(()=>{
+            setTimeout(() => {
+                setUpdate(!update)
+                console.log("Renamed ", newPokemon.name)
+            }, 2500);
+            })
         let input = document.getElementById(`rename-${pokemon.name}`)
         let pokemonName = document.getElementById(`left-pokemon-name-${pokemon.name}`)
         input.style.display ="none"

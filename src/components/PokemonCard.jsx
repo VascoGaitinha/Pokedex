@@ -13,12 +13,23 @@ let PokemonCard = (props) =>{
             setThisPokemon(response.data)
             setThisPokemonLoading(false)
         })
-    },[url])
+        .then(()=>{
+            console.log("PokemonList loaded")
+        }
+        )
+    },[url]) 
+   
 
     const clickAdd = () =>{
         if(myPokemonList.length <6){
         axios.post(Json_Url, thisPokemon)
-        setUpdate(!update)
+        .then(()=> {
+            setTimeout(() => {
+                setUpdate(!update)
+                console.log("Added ",thisPokemon.name)
+            }, 1500);
+
+    })
         }
     }
 
