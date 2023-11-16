@@ -22,10 +22,8 @@ const LeftSide = (props) =>{
     const clickRemove = (i) => {
         axios.delete(`${Json_Url}/${i}`)
         .then(() => {
-            setTimeout(() => {
-                setUpdate(!update);
-                console.log("Deleted complete");
-            }, 1500);
+            setUpdate(!update);
+            console.log("Deleted complete");
         })
         .catch((error) => {
             console.log("ERROR!!", error);
@@ -38,10 +36,8 @@ const LeftSide = (props) =>{
         newPokemon.name = rename
         axios.put(`${Json_Url}/${id}`, newPokemon)
         .then(()=>{
-            setTimeout(() => {
-                setUpdate(!update)
-                console.log("Renamed ", newPokemon.name)
-            }, 2500);
+            setUpdate(!update)
+            console.log("Renamed ", newPokemon.name)
             })
         let input = document.getElementById(`rename-${pokemon.name}`)
         let pokemonName = document.getElementById(`left-pokemon-name-${pokemon.name}`)

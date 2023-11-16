@@ -4,7 +4,7 @@ import PokemonCard from "./PokemonCard";
 const RightSide = (props) =>{
 
     const{allPokemonList, setAllPokemonList,Json_Url, update, setUpdate,defaultPokemonList,setPokemonInfo,setInfoLoaded,myPokemonList } = props;
-
+    
     return(
         <div className="right-container">
         <h1>POKEMON LIST</h1>

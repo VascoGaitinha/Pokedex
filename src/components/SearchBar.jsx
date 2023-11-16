@@ -5,6 +5,7 @@ const SearchBar = (props) => {
     const {allPokemonList, setAllPokemonList,defaultPokemonList, myPokemonList, Json_Url,update, setUpdate} = props;
     const singlePokemon_url=("https://pokeapi.co/api/v2/pokemon/")
     let randomIndexes = [];
+    let randomPokemons = [];
 
     const filterList = (searched) => {
         setAllPokemonList(defaultPokemonList)
@@ -22,29 +23,32 @@ const SearchBar = (props) => {
                 for (let i = 0; i < 6 - myPokemonList.length; i++) {
                     let rand = Math.floor(Math.random() * 649) + 1;
                     randomIndexes.push(rand);
-                    console.log(randomIndexes);
                 }
         
                 if (randomIndexes.length !== 0) {
-                    randomIndexes.forEach((id) => {
-                        axios.get(`${singlePokemon_url}${id}`)
+                    const requests = randomIndexes.map((id) => {
+                        return axios.get(`${singlePokemon_url}${id}`)
                             .then((response) => {
-                                axios.post(Json_Url, response.data)
-                                    .then(() => {
-                                        console.log(`Posting ${response.data.name}`);
-                                        setUpdate(!update);
-                                    })
-                                    .catch((error) => {
-                                        console.error('Error posting data:', error);
-                                    });
+                                console.log("Posting ", response.data.name);
+                                return axios.post(Json_Url, response.data);
                             })
                             .catch((error) => {
-                                console.error('Error fetching Pokemon data:', error);
+                                console.error('Error posting data:', error);
                             });
+                    });
+                
+                    Promise.all(requests)
+                        .then(() => {
+                            console.log(`Completed ${randomIndexes.length} updates`);
+                            setUpdate(!update);
+                        })
+                        .catch((error) => {
+                            console.error('Error in one or more requests:', error);
                         });
+                }
+                
                     }
                 }
-            };
     
 
     return(

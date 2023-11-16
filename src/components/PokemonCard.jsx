@@ -24,11 +24,8 @@ let PokemonCard = (props) =>{
         if(myPokemonList.length <6){
         axios.post(Json_Url, thisPokemon)
         .then(()=> {
-            setTimeout(() => {
-                setUpdate(!update)
-                console.log("Added ",thisPokemon.name)
-            }, 1500);
-
+            setUpdate(!update)
+            console.log("Added ",thisPokemon.name)
     })
         }
     }
